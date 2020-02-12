@@ -21,189 +21,44 @@
                 v-for="(event, index) in Events"
                 :key="index.id"
               >
-              <md-card class="md-card-example">
-      <md-card-area md-inset>
-        <md-card-media md-ratio="16:9">
-          <img src="/assets/examples/card-example.jpg" alt="Coffee House">
-        </md-card-media>
-
-        <md-card-header>
-          <h2 class="md-title">Coffee House</h2>
-          <div class="md-subhead">
-            <md-icon>location_on</md-icon>
-            <span>2 miles</span>
-          </div>
-        </md-card-header>
-
-        <md-card-content>
-          Illy Coffee served with a complimentary Leonidas Belgian Chocolate with all beverages.
-        </md-card-content>
-      </md-card-area>
-
-      <md-card-content>
-        <h3 class="md-subheading">Today's availability</h3>
-        <div class="card-reservation">
-          <md-icon>access_time</md-icon>
-          <div class="md-button-group">
-            <md-button>5:30PM</md-button>
-            <md-button>7:30PM</md-button>
-            <md-button>9:00PM</md-button>
-          </div>
-        </div>
-      </md-card-content>
-
-      <md-card-actions>
-        <md-button class="md-primary">Reserve</md-button>
-      </md-card-actions>
-    </md-card>
+                <div class="userdetail">
+                  <div class="profile">
+                    <img src="../assets/profile.jpg" class="image-profile" />
+                  </div>
+                  <div class="name-time">
+                    <div class="name">{{ event.userName }}</div>
+                    <div class="time">{{ event.postDate }}</div>
+                  </div>
+                </div>
+                <div class="discription-image">
+                  <div class="discription">
+                    <p style="text-align:justify">
+                      {{ event.eventDescription }}
+                    </p>
+                  </div>
+                  <div class="image">
+                    <img
+                      class="is-rounded image-image"
+                      src="https://images.unsplash.com/photo-1508355991726-ebd81e4802f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80"
+                      alt=""
+                    />
+                  </div>
+                  <div class="action">
+                    <button type="button" class="btn btn-outline-success">
+                      Join Events
+                    </button>
+                    <button type="button" class="btn btn-outline-danger">
+                      Message
+                    </button>
+                  </div>
+                </div>
+                <div class="actionbutton"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="section">
-        <div>
-          <h1 class="title">Categories</h1>
-          <div class="columns cover is-multiline is-mobile">
-            <div
-              class="column is-one-quarter"
-              :style="{ 'min-height': '160px' }"
-            >
-              <a href="#">
-                <span class="is-primary is-top is-medium tooltip">
-                  <figure class="image is-4by3 imageFade">
-                    <img
-                      class="is-rounded"
-                      src="https://images.unsplash.com/photo-1508355991726-ebd81e4802f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80"
-                      alt=""
-                    />
-                  </figure>
-                  <div class="subtitle m-t-xs bold">Sport</div>
-                </span>
-              </a>
-            </div>
-            <div
-              class="column is-one-quarter is-rounded"
-              :style="{ 'min-height': '160px' }"
-            >
-              <a href="#">
-                <span class="is-primary is-top is-medium tooltip">
-                  <figure class="image is-4by3 imageFade">
-                    <img
-                      class="is-rounded"
-                      src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                      alt=""
-                    />
-                  </figure>
-                  <div class="subtitle m-t-xs bold">Movies</div>
-                </span>
-              </a>
-            </div>
-            <div
-              class="column is-one-quarter is-rounded"
-              :style="{ 'min-height': '160px' }"
-            >
-              <a href="#">
-                <span class="is-primary is-top is-medium tooltip">
-                  <figure class="image is-4by3 imageFade">
-                    <img
-                      class="is-rounded"
-                      src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80"
-                      alt=""
-                    />
-                  </figure>
-                  <div class="subtitle m-t-xs bold">Music</div>
-                </span>
-              </a>
-            </div>
-            <div
-              class="column is-one-quarter is-rounded"
-              :style="{ 'min-height': '160px' }"
-            >
-              <a href="#">
-                <span class="is-primary is-top is-medium tooltip">
-                  <figure class="image is-4by3 imageFade">
-                    <img
-                      class="is-rounded"
-                      src="https://images.unsplash.com/photo-1509670811615-bb8b07cb3caf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80"
-                      alt=""
-                    />
-                  </figure>
-                  <div class="subtitle m-t-xs bold">Dance</div>
-                </span>
-              </a>
-            </div>
-            <div
-              class="column is-one-quarter is-rounded"
-              :style="{ 'min-height': '160px' }"
-            >
-              <a href="#">
-                <span class="is-primary is-top is-medium tooltip">
-                  <figure class="image is-4by3 imageFade">
-                    <img
-                      class="is-rounded"
-                      src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
-                      alt=""
-                    />
-                  </figure>
-                  <div class="subtitle m-t-xs bold">Party</div>
-                </span>
-              </a>
-            </div>
-            <div
-              class="column is-one-quarter is-rounded"
-              :style="{ 'min-height': '160px' }"
-            >
-              <a href="#">
-                <span class="is-primary is-top is-medium tooltip">
-                  <figure class="image is-4by3 imageFade">
-                    <img
-                      class="is-rounded"
-                      src="https://images.unsplash.com/photo-1490633874781-1c63cc424610?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
-                      alt=""
-                    />
-                  </figure>
-                  <div class="subtitle m-t-xs bold">Books</div>
-                </span>
-              </a>
-            </div>
-            <div
-              class="column is-one-quarter is-rounded"
-              :style="{ 'min-height': '160px' }"
-            >
-              <a href="#">
-                <span class="is-primary is-top is-medium tooltip">
-                  <figure class="image is-4by3 imageFade">
-                    <img
-                      class="is-rounded"
-                      src="https://images.unsplash.com/photo-1536510233921-8e5043fce771?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1542&q=80"
-                      alt=""
-                    />
-                  </figure>
-                  <div class="subtitle m-t-xs bold">Food</div>
-                </span>
-              </a>
-            </div>
-            <div
-              class="column is-one-quarter is-rounded"
-              :style="{ 'min-height': '160px' }"
-            >
-              <a href="#">
-                <span class="is-primary is-top is-medium tooltip">
-                  <figure class="image is-4by3 imageFade">
-                    <img
-                      class="is-rounded"
-                      src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
-                      alt=""
-                    />
-                  </figure>
-                  <div class="subtitle m-t-xs bold">Games</div>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+   
     </div>
   </div>
 </template>
@@ -218,42 +73,63 @@ export default {
     return {
       Events: [
         {
+          userName: "Praful Manandhar",
+          postDate: "12:30 pm",
+          profileImage: "../assets/profile.jpg",
           eventName: "Donation program ",
           eventTime: "Jan 20,2020",
           eventDescription:
-            "Maghi is observed in January on the first day of the month of Magh, bringing an end to the ill-omened month of Poush when all religious ceremonies are forbidden. People take Holy Bath in this festival and make and distribute delicious fudges like laddoo, ghee, chaku, sweet potatoes etc. Mother of the house wishes good health to all family members. According to Mahabharata, king Bhisma, who had the control on his own death, choose to die on the day of Maghe Sakranti. Therefore it is believed that person die  this day achieve Moksha (salvation)."
+            "Maghi is observed in January on the first day of the month of Magh, religious ceremonies are forbidden. People take Holy Bath in this festival and make and distribute delicious fudges like laddoo, ghee, chaku, sweet potatoes etc. Mother of the house wishes good health to all family members. According to Mahabharata, king Bhisma, who had the control on his own death, choose to die on the day of Maghe Sakranti. Therefore it is believed that person die  this day achieve Moksha (salvation)."
         },
         {
+          userName: "Praful Manandhar",
+          postDate: "12:30 pm",
+          profileImage: "../assets/profile.jpg",
           eventName: "Love program ",
           eventTime: "Jan 20,2020",
           eventDescription:
             "Maghi is observed in January on the first day of the month of Magh, bringing an end to the ill-omened month of Poush when all religious ceremonies are forbidden. People take Holy Bath in this festival and make and distribute delicious fudges like laddoo, ghee, chaku, sweet potatoes etc. Mother of the house wishes good health to all family members. According to Mahabharata, king Bhisma, who had the control on his own death, choose to die on the day of Maghe Sakranti. Therefore it is believed that person die  this day achieve Moksha (salvation)."
         },
         {
+          userName: "Asta Manandhar",
+          postDate: "12:30 pm",
+          profileImage: "../assets/profile.jpg",
           eventName: "Cleaning program ",
           eventTime: "Jan 20,2020",
           eventDescription:
             "Maghi is observed in January on the first day of the month of Magh, bringing an end to the ill-omened month of Poush when all religious ceremonies are forbidden. People take Holy Bath in this festival and make and distribute delicious fudges like laddoo, ghee, chaku, sweet potatoes etc. Mother of the house wishes good health to all family members. According to Mahabharata, king Bhisma, who had the control on his own death, choose to die on the day of Maghe Sakranti. Therefore it is believed that person die  this day achieve Moksha (salvation)."
         },
         {
+          userName: "Sridz Maharjan",
+          postDate: "2:00 am",
+          profileImage: "../assets/profile.jpg",
           eventName: "Maha program ",
           eventTime: "Jan 20,2020",
           eventDescription:
             "Maghi is observed in January on the first day of the month of Magh, bringing an end to the ill-omened month of Poush when all religious ceremonies are forbidden. People take Holy Bath in this festival and make and distribute delicious fudges like laddoo, ghee, chaku, sweet potatoes etc. Mother of the house wishes good health to all family members. According to Mahabharata, king Bhisma, who had the control on his own death, choose to die on the day of Maghe Sakranti. Therefore it is believed that person die  this day achieve Moksha (salvation)."
         },
         {
+          userName: "Saman Manandhar",
+          postDate: "12:30 pm",
+          profileImage: "../assets/profile.jpg",
           eventName: "Saman program ",
           eventTime: "Jan 20,2020",
           eventDescription:
             "Maghi is observed in January on the first day of the month of Magh, bringing an end to the ill-omened month of Poush when all religious ceremonies are forbidden. People take Holy Bath in this festival and make and distribute delicious fudges like laddoo, ghee, chaku, sweet potatoes etc. Mother of the house wishes good health to all family members. According to Mahabharata, king Bhisma, who had the control on his own death, choose to die on the day of Maghe Sakranti. Therefore it is believed that person die  this day achieve Moksha (salvation)."
         },
         {
+          userName: "Nilaa Manandhar",
+          postDate: "2:30 pm",
+          profileImage: "../assets/profile.jpg",
           eventName: "Praful program ",
           eventTime: "Jan 20,2020",
           eventDescription:
             "Maghi is observed in January on the first day of the month of Magh, bringing an end to the ill-omened month of Poush when all religious ceremonies are forbidden. People take Holy Bath in this festival and make and distribute delicious fudges like laddoo, ghee, chaku, sweet potatoes etc. Mother of the house wishes good health to all family members. According to Mahabharata, king Bhisma, who had the control on his own death, choose to die on the day of Maghe Sakranti. Therefore it is believed that person die  this day achieve Moksha (salvation)."
         },
         {
+          userName: "Prabin Manandhar",
+          postDate: "1:30 pm",
+          profileImage: "../assets/profile.jpg",
           eventName: "Prabin program ",
           eventTime: "Jan 20,2020",
           eventDescription:
@@ -276,23 +152,25 @@ export default {
 .events-cards-main {
   display: flex;
 
-  height: 80vh;
+  height: 100vh;
   width: 95%;
   align-self: center;
-  border: 1px solid red;
+  // border: 1px solid red;
   overflow: auto;
 }
 
 .events-cards-side {
   height: 100%;
   width: 25%;
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 .events-cards {
   display: flex;
   flex: 1;
-  border: 1px solid blue;
-    overflow: auto;
+  overflow: auto;
+      -webkit-box-shadow: 17px 28px 47px 2px rgba(0,0,0,0.52);
+-moz-box-shadow: 17px 28px 47px 2px rgba(0,0,0,0.52);
+box-shadow: 17px 28px 47px 2px rgba(0,0,0,0.52);
 
 }
 
@@ -300,54 +178,74 @@ export default {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+
 }
 .card {
+  display: flex;
+  flex-direction: column;
   margin: 10px;
-  width: 31%;
-  height: 290px;
-  border: 1px solid black;
+  width: 95%;
+  height: 500px;
 }
- .md-card {
-    width: 320px;
-    margin: 4px;
-    display: inline-block;
-    vertical-align: top;
-  }
 
-  .md-card-example {
-    .md-subhead {
-      .md-icon {
-        $size: 16px;
-
-        width: $size;
-        min-width: $size;
-        height: $size;
-        font-size: $size !important;
-      }
-
-      span {
-        vertical-align: middle;
-      }
-    }
-
-    .card-reservation {
-      margin-top: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      .md-icon {
-        margin: 8px;
-      }
-    }
-
-    .md-button-group {
-      display: flex;
-
-      .md-button {
-        min-width: 60px;
-        border-radius: 2px;
-      }
-    }
-  }
+.userdetail {
+  height: 50px;
+  width: 99%;
+  margin: 5px 2px 0px 2px;
+  display: flex;
+  justify-content: left;
+}
+.profile {
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.image-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.name-time {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+.name {
+  display: flex;
+  height: 25px;
+  margin: 1px;
+  width: 100%;
+}
+.image-image {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.time {
+  display: flex;
+  flex: 1;
+  height: 45%;
+}
+.discription-image {
+  margin: 2px;
+  width: 99%;
+  display: flex;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.discription {
+  margin: 2px;
+  height: 40%;
+  overflow: scroll;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+.image {
+  margin: 2px;
+  height: 50%;
+}
 </style>
