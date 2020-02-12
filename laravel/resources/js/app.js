@@ -3,7 +3,13 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
+import HomePage from './components/Home'
+import NavBar from './components/Navbar'
+import AppDropdown from './components/AppDropdown'
+import AppHero from './components/AppHero'
+import 'bootstrap'; 
+import 'bootstrap/dist/css/bootstrap.min.css'
+import jpt from './components/jpt'
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -29,4 +35,5 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    components: {HomePage, NavBar, jpt, AppDropdown , AppHero }
 });
