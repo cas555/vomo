@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+<style href="{{asset('css/spacing.css')}}"></style>
 <script src="{{asset('js/app.js')}}" async ></script>
     <div id="app">
         <nav-bar></nav-bar>

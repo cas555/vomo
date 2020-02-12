@@ -89,7 +89,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss"  rel='stylesheet/scss'>
+
 .is-rounded {
   border-radius: 10px !important;
 }
