@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <CreateNewEventModal/>
+        <!-- <CreateNewEventModal/> -->
 
         <div class="container home">
             <section class="section">
@@ -9,13 +9,56 @@
                     <div class="events-cards-side">
                         <div class="create-event-button">
                             <button
-                                @click="showCreateModal"
+                                @click="showModal = !showModal"
                                 type="button"
                                 class="btn btn-outline-primary"
                             >
-                                Create Event
+                                Create Eventg
                             </button>
-                            <button type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
+                            <b-button @click="Show2Modal" id="show-btn"
+                                >Open</b-button
+                            >
+                            <div>
+                                <b-modal v-model="showModal" hide-footer>
+                                    <template v-slot:modal-title>
+                                        Using <code>$bvModal</code> Methods
+                                    </template>
+                                    <div class="d-block text-center">
+                                        <h3>Hello From This Modal!</h3>
+                                    </div>
+                                    <b-button
+                                        class="mt-3"
+                                        block
+                                        @click="showModal = !showModal"
+                                        >Close Me</b-button
+                                    >
+                                </b-modal>
+                            </div>
+                            <div>
+                                <b-modal
+                                    ref="my-modal"
+                                    hide-footer
+                                    title="Using Component Methods"
+                                >
+                                    <div class="d-block text-center">
+                                        <h3>Hello From My Modal!</h3>
+                                    </div>
+                                    <b-button
+                                        class="mt-3"
+                                        variant="outline-danger"
+                                        block
+                                        @click="hideModal"
+                                        >Close Me</b-button
+                                    >
+                                    <b-button
+                                        class="mt-2"
+                                        variant="outline-warning"
+                                        block
+                                        @click="toggleModal"
+                                        >Toggle Me</b-button
+                                    >
+                                </b-modal>
+                            </div>
                         </div>
                     </div>
                     <div class="events-cards">
@@ -74,18 +117,25 @@
                         </div>
                     </div>
                 </div>
+                <!-- <CreateNewEventModal /> -->
             </section>
         </div>
     </div>
 </template>
 
 <script>
-import CreateNewEventModal from './CreateNewEventModal'
+import CreateNewEventModal from "./CreateNewEventModal";
+import { BButton, VBModal, BModal } from "bootstrap-vue";
 // import eventApi from "../Api/eventApi";
 export default {
     components: {
         // eventApi
-        CreateNewEventModal
+        CreateNewEventModal,
+        "b-button": BButton,
+        "b-modal": BModal
+    },
+    directives: {
+        VBModal
     },
     data() {
         return {
@@ -99,17 +149,21 @@ export default {
                         "Maghi is observed in January on the first day of the month of Magh, religious ceremonies are forbidden. People take Holy Bath in this festival and make and distribute delicious fudges like laddoo, ghee, chaku, sweet potatoes etc. Mother of the house wishes good health to all family members. According to Mahabharata, king Bhisma, who had the control on his own death, choose to die on the day of Maghe Sakranti. Therefore it is believed that person die  this day achieve Moksha (salvation)."
                 }
             ],
-            isFormDisplayed: false
+            isFormDisplayed: false,
+            showModal: false
         };
     },
     methods: {
+        Show2Modal() {
+            this.$refs["my-modal"].show();
+        },
         getEvents() {},
         toggleDisplayForm() {
             this.isFormDisplayed = !this.isFormDisplayed;
         },
-        showCreateModal(){
-          console.log("showCreateModal")
-          this.$modal.show("create-event")
+        showCreateModal() {
+            console.log("showCreateModal");
+            this.$modal.show("create-event");
         }
     }
 };
@@ -226,5 +280,9 @@ export default {
     height: 40px;
     margin-top: 50px;
     border: 1px sienna solid;
+}
+.modal-backdrop
+{
+    opacity:0.5 !important;
 }
 </style>
